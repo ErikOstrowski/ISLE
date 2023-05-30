@@ -57,4 +57,7 @@ $$O(Deployment) = O(DeepLabV3+^{inference} \times images)$$
 - Python 3.8, PyTorch 1.7.0, anaconda3
 - CUDA 10.1, cuDNN 7.6.5
 
+# Example images for comparison with the components
+![Results](./figures/Examples.png)
+
 
