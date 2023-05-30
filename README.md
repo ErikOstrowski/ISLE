@@ -37,12 +37,14 @@ $$O(Step2) = \sum_{m=0}^M O(Ref_m^{training}(i)) \times O(Ref_m^{inference}(i)) 
 
 ## Step. 3
 
-The merging $test$ of pseudo-labels is done after a class-wise evaluation for each $CAM_n^{c}$ to determine which Component after refinement has the high score for each class $c$ with 
+The merging of pseudo-labels is done after a class-wise evaluation for each $CAM_n^{*,c}$ to determine which Component after refinement has the high score for each class $c$ with 
 $1 \leq c \leq C$ :
 $$AE(i) = \sum_{c=1}^C AE^c(i) = \sum_{c=1}^C best(CAM_n^{*,c,i})$$
 For all $i$ in $I$
 The refinement step and Class-Wise Ensemble are just linearly dependent on the number of Components: 
 $$O(Step3) =  O(eval) \times N \times C  = I \times N \times C $$
+
+
 # Prerequisite
 - Python 3.8, PyTorch 1.7.0, anaconda3
 - CUDA 10.1, cuDNN 7.6.5
