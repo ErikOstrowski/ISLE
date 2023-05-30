@@ -31,7 +31,7 @@ $$O(Step1) = \sum_{n=0}^N O(Comp_n^{training}(i)) \times O(Comp_n^{inference}(i)
 
 Let $\{ Ref_1, Ref_2, ..., Ref_M \}$ be the list of all applied refinements. We assume that all refinements are applied to all components for the ease of notation.
 Then Step. 2 is defined as:
-$$\widetilde{CAM}_n^{i} = Ref_1(CAM_n^{i}) \otimes Ref_2(CAM_n^{i}) \otimes ... \otimes Ref_M(CAM_n^{i})$$
+$$\widetilde{CAM_n^{i}} = Ref_1(CAM_n^{i}) \otimes Ref_2(CAM_n^{i}) \otimes ... \otimes Ref_M(CAM_n^{i})$$
 For any $n$ with $1 \leq n \leq N$ Again, we need to define the complexity of each refinement method as $O(Ref_m())$ as the refinements are not further defined by the framework:
 $$O(Step2) = \sum_{m=0}^M O(Ref_m^{training}(i)) \times O(Ref_m^{inference}(i)) \times epochs_{n} \times 2 \times I \times N$$
 
