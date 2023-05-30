@@ -12,6 +12,14 @@ A key bottleneck of employing state-of-the-art semantic segmentation networks in
 
 <br>
 
+
+## Pseudo-Code
+![AutoEnsamble](./figures/Code.png)
+
+<br>
+
+
+
 # Prerequisite
 - Python 3.8, PyTorch 1.7.0, anaconda3
 - CUDA 10.1, cuDNN 7.6.5
