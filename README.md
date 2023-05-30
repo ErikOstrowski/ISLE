@@ -19,8 +19,8 @@ A key bottleneck of employing state-of-the-art semantic segmentation networks in
 <br>
 
 ## Complexity Analysis
-Let $\{ Comp_1, Comp_2, ..., Comp_N \} $ be the list of Components. Each component takes as input as specific image $i$ from the list of all images $I$ and gives  as output class activation maps $CAM_n^(i,c)$ for all classes $c$ in the dataset.
-$$ Comp_n(i) =  \sum_{c=0}^C CAM_n^(i,c), for  1 \leq n \leq N  $$
+Let $\{ Comp_1, Comp_2, ..., Comp_N \}$ be the list of Components. Each component takes as input as specific image $i$ from the list of all images $I$ and gives  as output class activation maps $CAM_n^{i,c}$ for all classes $c$ in the dataset.
+$$Comp_n(i) =  \sum_{c=0}^C CAM_n^{i,c}, for  1 \leq n \leq N$$
 
 # Prerequisite
 - Python 3.8, PyTorch 1.7.0, anaconda3
