@@ -19,10 +19,21 @@ A key bottleneck of employing state-of-the-art semantic segmentation networks in
 <br>
 
 ## Complexity Analysis
+
+# Step. 1
+
 Let $\{ Comp_1, Comp_2, ..., Comp_N \}$ be the list of Components. Each component takes as input as specific image $i$ from the list of all images $I$ and gives  as output class activation maps $CAM_n^{i,c}$ for all classes $c$ in the dataset.
 $$Comp_n(i) =  \sum_{c=0}^C CAM_n^{i,c}, 1 \leq n \leq N$$
-As the components  = not further defined by the framework, we can only summarize their complexity as follows:
+As the components are not further defined by the framework, we can only summarize their complexity as follows:
 $$O(Step1) = \sum_{n=0}^N O(Comp_n^{training}(i)) \times O(Comp_n^{inference}(i)) \times epochs_{n} \times 2 \times I$$
+
+# Step. 2
+
+Let $\{ Ref_1, Ref_2, ..., Ref_M \}$ be the list of all applied refinements. We assume that all refinements are applied to all components for the ease of notation.
+Then Step. 2 for any $n$ with $1 \leq n \leq N$ is defined as:
+$$CAM^{*,i}_n = \mul_{m=0}^M Ref_m(CAM_n^{i})$$
+Again, we need to define the complexity of each refinement method as $O(Ref_m())$ as the refinements are not further defined by the framework:
+
 
 # Prerequisite
 - Python 3.8, PyTorch 1.7.0, anaconda3
