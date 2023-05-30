@@ -14,7 +14,7 @@ A key bottleneck of employing state-of-the-art semantic segmentation networks in
 
 
 ## Pseudo-Code
-![AutoEnsamble](./figures/Code.png)
+![AutoEnsamble](./figures/code.png)
 
 <br>
 
