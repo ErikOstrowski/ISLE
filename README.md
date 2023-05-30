@@ -33,8 +33,15 @@ Let $\{ Ref_1, Ref_2, ..., Ref_M \}$ be the list of all applied refinements. We 
 Then Step. 2 is defined as:
 $$CAM_n^{*,i} = Ref_1(CAM_n^{i}) \otimes Ref_2(CAM_n^{i}) \otimes ... \otimes Ref_M(CAM_n^{i})$$
 For any $n$ with $1 \leq n \leq N$ Again, we need to define the complexity of each refinement method as $O(Ref_m())$ as the refinements are not further defined by the framework:
+$$O(Step2) = \sum_{m=0}^M O(Ref_m^{training}(i)) \times O(Ref_m^{inference}(i)) \times epochs_{n} \times 2 \times I \times N$$
 
+# Step. 3
 
+The merging of pseudo-labels is done after a class-wise evaluation for each $CAM_n^{*,c}$ to determine which Component after refinement has the high score for each class $c$ with $1 \leq c \leq C$:
+$$AE(i) = \sum_{c=1}^C AE^c(i) = \sum_{c=1}^C best(CAM_n^{*,c,i})$$
+For all $i$ in $I$
+The refinement step and Class-Wise Ensemble are just linearly dependent on the number of Components: 
+$$O(Step3) =  O(eval) \times N \times C  = I \times N \times C $$
 # Prerequisite
 - Python 3.8, PyTorch 1.7.0, anaconda3
 - CUDA 10.1, cuDNN 7.6.5
