@@ -58,6 +58,10 @@ $$O(Deployment) = O(DeepLabV3+^{inference} \times images)$$
 - CUDA 10.1, cuDNN 7.6.5
 
 # Example images for comparison with the components
-![Results](./figures/Examples.png)
-
+![Results](./figures/ICIP_examples_alt1.png)
+Pseudo-label examples from (a) DRS, (b) PMM, (c) PuzzleCAM, (d) CLIMS, (e) AutoEnsemble, (f) Ground truth.
+In the this example, we notice that AutoEnsemble takes the best table and person mask from CLIMS and from PuzzleCAM the couch mask.
+![Results](./figures/ICIP_examples_alt2.png)
+In the this example, we notice that AutoEnsemble takes the best table and person mask from CLIMS and from PuzzleCAM the couch mask.
+In the second, we observe that AutoEnsemble has the most accurate person mask, while not using the mostly misclassified couch mask. The dog mask is slightly worse compared to CLIMS but the much better person mask outweights those misclassifications. 
 
