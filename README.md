@@ -37,7 +37,8 @@ $$O(Step2) = \sum_{m=0}^M O(Ref_m^{training}(i)) \times O(Ref_m^{inference}(i)) 
 
 ## Step. 3
 
-The merging of pseudo-labels is done after a class-wise evaluation for each $CAM_n^{*,c}$ to determine which Component after refinement has the high score for each class $c$ with $1 \leq c \leq C$:
+The merging of pseudo-labels is done after a class-wise evaluation for each $CAM_n^{*,c}$ to determine which Component after refinement has the high score for each class $c$ with 
+$1 \leq c \leq C$ :
 $$AE(i) = \sum_{c=1}^C AE^c(i) = \sum_{c=1}^C best(CAM_n^{*,c,i})$$
 For all $i$ in $I$
 The refinement step and Class-Wise Ensemble are just linearly dependent on the number of Components: 
