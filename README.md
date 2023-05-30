@@ -18,16 +18,16 @@ A key bottleneck of employing state-of-the-art semantic segmentation networks in
 
 <br>
 
-## Complexity Analysis
+# Complexity Analysis
 
-# Step. 1
+## Step. 1
 
 Let $\{ Comp_1, Comp_2, ..., Comp_N \}$ be the list of Components. Each component takes as input as specific image $i$ from the list of all images $I$ and gives  as output class activation maps $CAM_n^{i,c}$ for all classes $c$ in the dataset.
 $$Comp_n(i) =  \sum_{c=0}^C CAM_n^{i,c}, 1 \leq n \leq N$$
 As the components are not further defined by the framework, we can only summarize their complexity as follows:
 $$O(Step1) = \sum_{n=0}^N O(Comp_n^{training}(i)) \times O(Comp_n^{inference}(i)) \times epochs_{n} \times 2 \times I$$
 
-# Step. 2
+## Step. 2
 
 Let $\{ Ref_1, Ref_2, ..., Ref_M \}$ be the list of all applied refinements. We assume that all refinements are applied to all components for the ease of notation.
 Then Step. 2 is defined as:
@@ -35,7 +35,7 @@ $$CAM_n^{*,i} = Ref_1(CAM_n^{i}) \otimes Ref_2(CAM_n^{i}) \otimes ... \otimes Re
 For any $n$ with $1 \leq n \leq N$ Again, we need to define the complexity of each refinement method as $O(Ref_m())$ as the refinements are not further defined by the framework:
 $$O(Step2) = \sum_{m=0}^M O(Ref_m^{training}(i)) \times O(Ref_m^{inference}(i)) \times epochs_{n} \times 2 \times I \times N$$
 
-# Step. 3
+## Step. 3
 
 The merging of pseudo-labels is done after a class-wise evaluation for each $CAM_n^{*,c}$ to determine which Component after refinement has the high score for each class $c$ with $1 \leq c \leq C$:
 $$AE(i) = \sum_{c=1}^C AE^c(i) = \sum_{c=1}^C best(CAM_n^{*,c,i})$$
