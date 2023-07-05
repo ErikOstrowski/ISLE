@@ -46,7 +46,7 @@ $$O(Step3) =  O(eval) + O(merger)  = I \times N \times C + I \times C $$
 
 ## Step. 4
 
-The training of the DeepLabV3+ model is not different as in any other WSSS pipeline:
+The training of the DeepLabV3+ model is not different from any other WSSS pipeline:
 $$O(Step.4) = O(DeepLabV3+^{training} \times epochs \times images)$$
 
 But for the final deployment of AutoEnsamble, only the forward pass of DeepLabV3+ is necessary, independent of the number of components ad refinements used: 
